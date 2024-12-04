@@ -2,8 +2,8 @@
 
 [AOC 2024](https://adventofcode.com/2024) in CPP
 
-Folder Structure
 The project is structured as follows:
+
 ```bash
 /
 ├── day01/
