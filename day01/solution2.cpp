@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
@@ -13,21 +14,19 @@ int main() {
     ifstream file("input.txt");
     if (!file.is_open()) return 1;
 
-    vector<int> left, right;
+    vector<int> left;
+    unordered_map<int, int> right;
     string line;
 
     while (getline(file, line)) {
         int idx = line.find(" ");
         left.push_back(stoi(line.substr(0, idx)));
-        right.push_back(stoi(line.substr(idx)));
+        right[stoi(line.substr(idx))]++;
     }
-
-    sort(left.begin(), left.end());
-    sort(right.begin(), right.end());
 
     int sum = 0;
     for (int i = 0; i < left.size(); i++) {
-        sum += abs(left[i] - right[i]);
+        if (right.find(left[i]) != right.end()) sum += left[i] * right[left[i]];
     }
 
     cout << sum;
