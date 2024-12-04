@@ -1,0 +1,8 @@
+# IDE and editor files
+.vscode/
+
+# Ignore input and output test files if not tracked
+*.in
+*.out
+solution1
+solution2
