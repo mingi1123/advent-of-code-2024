@@ -19,7 +19,6 @@ bool check_safe(vector<int> v) {
         }
         if (abs(v[i - 1] - v[i]) > 3 || abs(v[i - 1] - v[i]) < 1) return false;
     }
-
     return true;
 }
 

@@ -19,7 +19,6 @@ bool check_safe(vector<int> v) {
         }
         if (abs(v[i - 1] - v[i]) > 3 || abs(v[i - 1] - v[i]) < 1) return false;
     }
-
     return true;
 }
 
@@ -29,7 +28,6 @@ bool remove_one(vector<int> v) {
         temp.erase(temp.begin() + i);
         if (check_safe(temp)) return true;
     }
-
     return false;
 }
 
